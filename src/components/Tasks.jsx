@@ -38,10 +38,18 @@ const tasks = ({
           </svg>
         </div>
         <div
-          className={`px-2 text-[#F2F2F2] text-sm ${complete} ${underline} w-[90%] `}
+          className={`px-2 text-sm ${
+            completed ? "text-[#888]" : "text-[#f2f2f2]"
+          } ${underline} w-[90%] `}
         >
           <h3 className="uppercase font-bold">{title}</h3>
-          <p className={`text-[#d9d9d9] text-xs ${complete} `}>{description}</p>
+          <p
+            className={` text-xs  ${
+              completed ? "text-[#888]" : "text-[#d5d5d5]"
+            }`}
+          >
+            {description}
+          </p>
         </div>
         <button
           onClick={() => onDelete(id)}
