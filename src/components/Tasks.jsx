@@ -9,7 +9,7 @@ const tasks = ({
   onDelete,
 }) => {
   const underline = ` ${completed && "line-through"}`;
-  const complete = `${completed && "text-[#888]"} `;
+  const complete = `${completed && "text-[#777]"} `;
 
   return (
     <>

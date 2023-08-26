@@ -1,16 +1,34 @@
-import React, { useState } from "react";
+import { useRef } from "react";
 
 const Form = ({
+  task,
   todo: { title, description },
   onTodo,
   setTodo,
   onSetDescription,
   onAddTask,
+  onKeyDown,
 }) => {
+  const inputRef = useRef(null);
+  const textareaRef = useRef(null);
+
+  const handleInputKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      textareaRef.current.focus();
+    }
+  };
+
+  const handleTexteraKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
   const handleSubmit = (e) => {
     const newTask = {
-      id: Date.now(),
-      title: title,
+      id: task.length + 1,
+      title: title.trim(),
       description: description,
       completed: false,
     };
@@ -40,6 +58,8 @@ const Form = ({
             placeholder="Add a new task..."
             value={title}
             onChange={onTodo}
+            ref={inputRef}
+            onKeyDown={handleInputKeyDown}
             autoComplete="off"
           />
 
@@ -51,6 +71,8 @@ const Form = ({
               placeholder="Add a description..."
               value={description}
               onChange={onTodo}
+              ref={textareaRef}
+              onKeyDown={handleTexteraKeyDown}
             />
           )}
         </div>
