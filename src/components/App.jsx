@@ -17,7 +17,7 @@ function App() {
     if (!todo.title) return;
     if (!todo.description) return;
 
-    setTask((task) => [...task, newTask]);
+    setTask((task) => [newTask, ...task]);
   };
 
   const handleTodo = (e) => {
@@ -48,7 +48,7 @@ function App() {
   }, [task]);
 
   return (
-    <div className="bg-[#1a1a1a] h-screen">
+    <div className="bg-[#1a1a1a]">
       <Logo />
       <div className=" max-w-[1000px] m-auto">
         <Form

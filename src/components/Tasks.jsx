@@ -44,7 +44,7 @@ const tasks = ({
         >
           <h3 className="uppercase font-bold">{title}</h3>
           <p
-            className={` text-xs  ${
+            className={` text-xs pt-2  ${
               completed ? "text-[#888]" : "text-[#d5d5d5]"
             }`}
           >
