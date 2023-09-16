@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="bg-[#1a1a1a]">
       <Logo />
-      <div className=" max-w-[1000px] m-auto">
+      <div className=" max-w-[1000px] m-auto min-w-[300px]">
         <Form
           task={task}
           todo={todo}

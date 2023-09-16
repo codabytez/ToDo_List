@@ -22,7 +22,7 @@ const tasks = ({
             type="checkbox"
             defaultChecked={completed}
             onChange={() => onCompleted(id)}
-            className=" peer shrink-0 appearance-none w-4 h-4 border-2 border-[#4ea8de] rounded-full mt-1 checked:bg-[#5e60ce] checked:border-0 hover:bg-[#333]"
+            className="peer shrink-0 appearance-none w-4 h-4 border-2 border-[#4ea8de] rounded-full mt-1 checked:bg-[#5e60ce] checked:border-0 hover:bg-[#333]"
           />
           <svg
             className="absolute top-1 left-1 w-2 h-2 mt-1 hidden peer-checked:block pointer-events-none"
@@ -44,7 +44,7 @@ const tasks = ({
         >
           <h3 className="uppercase font-bold">{title}</h3>
           <p
-            className={` text-xs pt-2  ${
+            className={` text-xs pt-2 break-all ${
               completed ? "text-[#888]" : "text-[#d5d5d5]"
             }`}
           >
